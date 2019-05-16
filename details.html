@@ -2,10 +2,12 @@
 <head>
 <title>page2</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Marcellus+SC" rel="stylesheet">
+
 </head>
 <body>
-<h1><a href="index.html">Go back to home</a></h1>
+<h1><a href="index.html">Home</a></h1>
 <h2></h2>
 <h3></h3>
 <h4></h4>
@@ -13,17 +15,4 @@
 </body>
 </html>
 
-<script>
-
-	$(document).ready(function(){
-		var ans=JSON.parse(localStorage['detail']);
-		console.log(ans);
-		$('h2').append(ans[0]);
-		$('h3').append("Synonym:"+ans[1]);
-		$('h4').append("Example:"+ans[2]);
-		$('#video').append(ans[3]).attr('href', ans[3]);
-	
-	
-	});
-
-</script>
+<script src="script.js"></script>

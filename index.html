@@ -4,67 +4,24 @@
  <head>
   <title>JSON Word Searching Project | CSE 480</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <style>
-  #result {
-   position: absolute;
-   width: 100%;
-   max-width:870px;
-   cursor: pointer;
-   overflow-y: auto;
-   max-height: 400px;
-   box-sizing: border-box;
-   z-index: 1001;
-  }
-  .link-class:hover{
-   background-color:#f1f1f1;
-  }
-  </style>
- </head>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Marcellus+SC" rel="stylesheet">
+
+
+
+</head>
  <body>
-  <br /><br />
+  
   <div class="container" style="width:900px;">
-   <h2 align="center">JSON Word Searching Project | CSE 480</h2>
-   <h3 align="center">Enter Word</h3>   
-   <br /><br />
-   <div align="center">
+   <h1>Dictionary of Phrase and Fable
+  </h1>
+   <div>
     <input type="text" name="search" id="search" placeholder="Search Word" class="form-control" />
    </div>
-   <ul class="list-group" id="result"></ul>
+   <ul id="result"></ul>
    <br />
   </div>
  </body>
 </html>
 
-<script>
-$(document).ready(function(){
- $.ajaxSetup({ cache: false });
- $('#search').keyup(function(){
-  $('#result').html('');
-  $('#state').val('');
-  var searchField = $('#search').val();
-  var expression = new RegExp(searchField, "i");
-  $.getJSON('data.json', function(data) {
-   $.each(data, function(key, value){
-	if (value.word.search(expression) != -1 )
-    {
-     $('#result').append('<li class="list-group-item link-class">'+value.word+' | '+value.synonym+' | '+value.example+' | '+value.video+' | </li>').sort();
-	}
-   });   
-  });
- });
- 	 $('#result').on('click', 'li', function() {
-  var res = $(this).data('word');
-  
-  var text=$(this).text();
-	var answer=text.split('|');
-	localStorage['detail']=JSON.stringify(answer);
-	window.location.replace('details.html');
-  /*
-  $('#search').val($.trim(click_text[0]));
-  $("#result").html('');*/
- });
-
-});
-</script>
+<script src="script.js"></script>

@@ -1,18 +1,46 @@
 body{
     font-family: 'EB Garamond', serif;
-
+    overflow-x: hidden;
+    color: gray;
 }
 
 #result {
     position: absolute;
-    width: 100%;
-    max-width:870px;
+    width: 99%;
     cursor: pointer;
     overflow-y: auto;
-    max-height: 400px;
     box-sizing: border-box;
     z-index: 1001;
    }
    .link-class:hover{
     background-color:#f1f1f1;
    }
+
+   h1{
+       font-size: 60px;
+       text-align: center;
+   }
+
+   .searchbar{
+position: absolute;
+left: 45%;
+   }
+
+
+p{
+    text-align: center;
+    font-size: 25px;
+}
+h2{
+    text-align: center;
+
+}
+h2 a{
+    text-decoration: none;
+    color: gray;
+}
+
+p a{
+    text-decoration: none;
+    color: gray;
+}

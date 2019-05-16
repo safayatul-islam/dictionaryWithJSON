@@ -31,9 +31,9 @@ $(document).ready(function(){
    $(document).ready(function(){
     var ans=JSON.parse(localStorage['detail']);
     console.log(ans);
-    $('h2').append(ans[0]);
-    $('h3').append("Synonym:"+ans[1]);
-    $('h4').append("Example:"+ans[2]);
+    $('#phrase').append(ans[0]);
+    $('#meaning').append("Synonym:"+ans[1]);
+    $('#example').append("Example:"+ans[2]);
     $('#video').append(ans[3]).attr('href', ans[3]);
 
 
